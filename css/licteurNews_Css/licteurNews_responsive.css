@@ -1,0 +1,193 @@
+@media screen and (max-width: 575px){
+div.screenHome.active, div.commentary.active, div.boxScroll.active, div.screenSearch.active, div.like.active{
+    width: 92%;
+}
+div.data h1.tiTle, div.data_P2 h1, div.data h1, div.dataF div h1.titre{
+    font-size: small;
+    width: fit-content;
+}
+nav#menu.active{
+    width: 100%;
+    z-index: 200;
+}
+div.suggItems_P2 div.data_P2{
+    margin: 0;
+}
+div.suggTopic ul li:nth-child(1){
+    display: none;
+}
+div.suggTopic ul li:nth-child(4){
+    display: none;
+}
+.screenHome .boxScroll, .screenSearch, .like{
+    overflow-y: hidden;
+    height: 91vh;
+    overflow-y: auto;
+    width: 75%;
+}
+nav#menu{
+    width:  calc(100% - 92%);
+}
+input#locationInput{
+    width: 105%;
+    height: 90%;
+    position: relative;
+    padding-left: 4px;
+    border-radius: 4px;
+}
+p.humidity{
+    display: none;
+}
+p.date{
+    text-align: center;
+    margin-bottom: 20px;
+}
+div.sugg_P2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(10, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 5px;
+    }
+    div.sugg_P2 div{
+        width: 400px;
+        margin-left: 40px;
+    }
+    div.suggItems_P2:nth-child(1){ grid-area: 2 / 1 / 3 / 2; }
+    div.suggItems_P2:nth-child(2) { grid-area: 1 / 1 / 2 / 2; }
+    div.suggItems_P2:nth-child(3) { grid-area: 3 / 1 / 4 / 2; }
+    div.suggItems_P2:nth-child(4) { grid-area: 4 / 1 / 5 / 2; }
+    div.suggItems_P2:nth-child(5) { grid-area: 5 / 1 / 6 / 2; }
+    div.suggItems_P2:nth-child(6) { grid-area: 6 / 1 / 7 / 2; }
+    div.suggItems_P2:nth-child(7) { grid-area: 7 / 1 / 8 / 2; }
+    div.suggItems_P2:nth-child(8) { grid-area: 8 / 1 / 9 / 2; }
+    div.suggItems_P2:nth-child(9) { grid-area: 9 / 1 / 10 / 2; }
+    div.suggItems_P2:nth-child(10) { grid-area: 10 / 1 / 11 / 2; }
+    div.suggItems_P2:nth-child(6) .data_P2 h1, .suggItems_P2:nth-child(5) .data_P2 h1{font-size: small;}
+div.countries form{
+    background-color: transparent;
+}
+div.boxSearch{
+    position: relative;
+    padding-left: 0;
+    margin-left: -30px;
+}
+button.commentaryButton{
+    width: 20%;
+}
+}@media (max-width: 500px){
+    div#sugg{
+        flex-direction: column;
+        height: 100vh;
+    }
+    div.screenHome.active, div.commentary.active, div.boxScroll.active, div.screenSearch.active, div.like.active{
+        width: 90%;
+    }
+    nav#menu{
+        width: calc(100% - 90%);
+    }
+    div.sugg_P2 div{
+        width: 350px;
+        margin-left: 33px;
+    }
+    div.suggItems_P2 div.data_P2{
+        margin: 0;
+    }
+}@media (max-width: 415px){
+    div.screenHome.active, div.commentary.active, div.boxScroll.active, div.screenSearch.active, div.like.active{
+        width: 88%;
+    }
+    nav#menu{
+        width: calc(100% - 88%);
+    }    div.sugg_P2 div{
+        width: 315px;
+        margin-left: 33px;
+    }
+    div.dataF{
+       width: 200%; 
+    }
+}
+
+@media  screen and (max-width: 400px) {
+    div.dataMeteo p.date, div.data1 p.deg{
+        font-size: large;
+    }
+    div.boxScroll.active div#sugg_P2{
+        padding-left: 3%;
+    }
+    div.sugg_P2 div{
+        width: 250px;
+        margin-left: 29px;
+    }
+}
+@media screen and (min-width: 576px) {
+    div.data h1.tiTle, div.data_P2 h1, div.data h1, div.dataF div h1.titre{
+        font-size: small;
+        width: fit-content;
+    }
+    div.suggItems_P2:nth-child(5) div.data_P2 h1{ font-size: 10px;}
+    div.suggItems_P2:nth-child(6) div.data_P2 h1{ font-size: 10px;}
+    div.screenHome.active, div.commentary.active, div.boxScroll.active, div.screenSearch.active, div.like.active{
+        width: 92%;
+    }
+    nav#menu{
+        width: calc(100% - 92%);
+    }
+    nav#menu.active{
+        width: 100%;
+        z-index: 200;
+    }
+}
+@media screen and (min-width: 888px) {
+    div.screenHome.active, div.commentary.active, div.boxScroll.active, div.screenSearch.active, div.like.active{
+        width: 92%;
+    }
+    nav#menu{
+        width: calc(100% - 92%);
+    }
+    .screenHome .boxScroll, .screenSearch, .like{
+        overflow-y: hidden;
+        height: 91vh;
+        overflow-y: auto;
+        width: 80%;
+    }
+    nav#menu.active{
+        width: 100%;
+        z-index: 200;
+    }
+}
+@media (min-width: 888px) {
+    div.screenHome.active, div.commentary.active, div.boxScroll.active, div.screenSearch.active, div.like.active{
+        width: 92%;
+    }
+    nav#menu{
+        width: calc(100% - 92%);
+    }
+    .screenHome .boxScroll, .screenSearch, .like{
+        overflow-y: hidden;
+        height: 91vh;
+        overflow-y: auto;
+        width: 92%;
+    }
+    nav#menu.active{
+        width: 100%;
+        z-index: 200;
+    }
+}
+@media (min-width: 900px) {
+    div.screenHome.active, div.commentary.active, div.boxScroll.active, div.screenSearch.active, div.like.active{
+        width: 96%;
+    }
+    nav#menu{
+        width: calc(100% - 96%);
+    }
+    nav#menu.active{
+        width: 100%;
+        z-index: initial;
+    }
+}@media (max-width: 1155px) {
+    nav#menu.active{
+        width: 100%;
+        z-index: 200;
+    }
+}

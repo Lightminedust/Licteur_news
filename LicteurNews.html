@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Licteur News</title>
+  <link rel="stylesheet" href="css/licteurNews_Css/licteurNews_responsive.css">
+  <link rel="stylesheet" href="css/licteurNews_Css/LicteurNews.css">
+</head>
+<body>
+  <header id="head">
+    <img src="img/Lic-removebg-preview.png" alt="">
+    <div id="research" class="search">
+      <form action="">
+        <input id="searchBar" type="search" placeholder="Recherche">
+        <button type="submit"><ion-icon name="search"></ion-icon></button>
+      </form>
+    </div>
+    <div class="userData">
+      <div class="user"><ion-icon name="person-outline"></ion-icon></div>
+      <div class="notif"><ion-icon name="notifications-outline"></ion-icon></div>
+    </div>
+  </header>
+  <nav id="menu">
+    <ion-icon id="menu_sand" class="menu_sand" name="menu-sharp" style="margin-top: 20px;"></ion-icon>
+    <div class="menu">
+      <div class="top_menu">
+        <div onclick="homeOn()" class="home">
+        <ion-icon name="home"></ion-icon>
+        <p>Acceuil</p>
+        </div>
+        <div class="fav" class="headlines" onclick="screenLike()">
+          <ion-icon name="newspaper-outline"></ion-icon>
+          <p>Headlines</p>
+        </div>
+      <div class="com">
+        <ion-icon name="happy"></ion-icon>
+        <p>Commentaire</p>
+      </div>
+      </div>
+      <div class="bottom_menu">
+        <div class="sett" style="position: absolute;">
+          <ion-icon name="settings-sharp"></ion-icon>
+        <p>Settings</p></div>
+    </div>
+    </div>
+  </nav>
+  <div id="screenHome" class="screenHome">
+    <div class="boxScroll" style="display: none;">
+    <div class="homeItems">
+      <div class="suggTopic">
+        <ul>
+          <li><a href="#">Sport</a></li>
+          <li><a href="#">Science</a></li>
+          <li><a href="#">Guerre</a></li>
+          <li><a href="#">Environnement</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="sugg" id="sugg">
+      <div id="suggItems" class="suggItems" style="transition: 0.5s ease;">
+        <div class="dataNotice">
+          <div class="div" style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50px;margin-top: 10px; margin-left: 10px; content: '...'; border-radius: 10px; height: 50px; background-color: rgba(250, 235, 215, 0);">
+            <ion-icon name="heart-outline" class="icon" title="like" style="transform: scale(2);"></ion-icon>
+        </div>
+        </div>
+        <div class="data">
+          <h1 class="tiTle">Tittle</h1>
+          <p id="dataText" style="display: none;">Data</p>
+          <p class="src" id="souRce">source</p>
+        </div>
+      </div>
+      <div class="localization" style="background-image: url(../img/licteur_news/Robot.gif); background-position: center; background-size: cover;">
+        <div class="countries" style="display: flex;
+        align-items: center;
+        justify-content: center; width: 100%; height: 25%;">
+          <form action="" style=" position: relative; border-radius: 10px;height: 30%; width: 60%; display: flex;
+          align-items: center;
+          justify-content: center;"><input id="locationInput" type="search" placeholder="type a location" style="outline: none; border-radius: 10px; border: 0px solid;"></form>
+        </div>
+        <div class="dataMeteo" style="width: 100%; height: 75%; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+          <div class="data1" style="width: 100%; display: flex; align-items: center; justify-content: space-evenly; flex-direction: row;">
+            <img src="#" alt="icon" style="width: 25%;"><p style="font-size: xx-large;">/</p>
+            <p class="deg" style="font-size: xx-large;">deg</p><p style="font-size: xx-large;">/</p>
+            <p class="humidity" style="font-size: xx-large;">Humidité</p>
+          </div>
+          <div class="data2" style="width: 100%;  height: 50%; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+            <p class="date"></p>
+            <div>
+              <p class="cities">Cities</p>
+              <p class="desc">description</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sugg_P2" id="sugg_P2">
+      <div class="suggItems_P2" style="height: 50vh; border-radius: 10px;">
+        <div class="none">
+          <div class="div" style="display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50px;margin-top: 10px; margin-left: 10px; content: '...'; border-radius: 10px; height: 50px;">
+            <ion-icon name="heart-outline" class="icon" title="like"></ion-icon>
+        </div></div>
+        <div class="data_P2">
+          <h1>Tittle</h1>
+          <p class="src_P2">source</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="screenSearch" style="display: none; transition: 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);" id="screenSearch">
+    <div class="boxSearch">
+    <h1 class="Theme">Theme</h1>
+    <div class="news">
+      <div class="suggItems" id="suggItems">
+        <div class="div" style="position: relative; top: -40%; display: flex; align-items: center; justify-content: center; flex-direction: column; width: 50px;margin-top: 10px; margin-left: 10px; content: '...'; border-radius: 10px; height: 50px;">
+          <ion-icon name="heart-outline" class="icon" title="like"></ion-icon>
+      </div>
+        <div class="data">
+          <h1>Tittle</h1>
+          <p class="src">source</p>
+        </div></div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="like" style="background-image: url(../img/licteur_news/background_fav.jpg); backdrop-filter: blur(10px); background-repeat: no-repeat; background-position: center; background-size: cover;">
+    <div class="other" style="display: flex; align-items: center; justify-content: center; flex-direction: column; background-color: rgba(240, 248, 255, 0); backdrop-filter: blur(2px); width: 100%; height: 100%;">
+    <div class="dataFinance" >
+      <div class="boxF">
+        <div class="dataNone" onmouseover="onMouse()" onclick="finance()" style="
+        width: 40%;
+        height: 100%;
+        backdrop-filter: blur(10px);
+        border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+        <ion-icon style="transform: scale(3);" name="chevron-forward-circle-outline"></ion-icon>
+      </div>
+        <div class="dataF" style="display: flex; align-items: flex-end; justify-content: flex-end;">
+          <div>
+          <h1 class="titre">title</h1>
+          <p class="source">source</p></div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+  <div class="commentary">
+    <div>
+      <h1 style="display: block; position: relative;top: 15%;">Dites nous ce que vous pensez de notre app</h1>
+      <form action="">
+        <input type="text" placeholder="Ecrivez un Commentaire">
+        <button class="commentaryButton" type="submit" style="width: 30%;">Envoyer le mail</button>
+      </form>
+    </div>
+  </div>
+  <div class="settings" >
+    <div>
+      <div id="language">
+        <h1>Choisis une langue : </h1>
+        <select name="lang" id="selectLang">
+          <option value="ang">Anglais</option>
+          <option value="fr">Francais</option>
+          <option value="jp">Japenese</option>
+          <option value="kr">Korean</option>
+          <option value="Cn">China</option>
+        </select>
+      </div>
+      <div id="region">
+        <h1  style="width: 100%;" >Choisis une region :</h1>
+        <form action="">
+          <input type="text" style="width: 100%;">
+      </form>
+      </div>
+    </div>
+    <button title="save" class="settButton" style=" cursor: pointer; width: 50%; outline: none; border-radius: 5px; border: 1px solid transparent;">Save</button>
+  </div>
+  <script src="js/licteur_news/NewsApi.js"></script>
+  <script src="js/licteur_news/weatherApi.js"></script>
+  <script src="js/licteur_news/Gnews.js"></script>
+  <script src="js/licteur_news/dataFinance.js"></script>
+  <script src="js/licteur_news/licteurNews_functions.js"></script>
+  <script src="js/licteur_news/screenSearch.js"></script>
+  <script>
+
+var parentDiv = document.getElementById("sugg");
+var child_div = document.querySelector(".suggItems");
+
+var parentDiv_3 = document.querySelector('.news')
+var child_div_3 = document.querySelector('.news #suggItems')
+
+function duplicateDive(parent, child, nb_articles){
+  for(let i = 0; i < nb_articles; i++){
+    var clone = child.cloneNode(true);
+    parent.appendChild(clone);
+  }
+}
+var parentDiv_2 = document.getElementById("sugg_P2");
+var child_div_2 = document.querySelector(".suggItems_P2");
+var ion_icon = document.querySelectorAll('.icon')
+var parentDiv_4 = document.querySelector('.dataFinance');
+var child_div_4 = document.querySelector('.boxF')
+  duplicateDive(parentDiv, child_div, );
+  duplicateDive(parentDiv_2, child_div_2, 9)
+  duplicateDive(parentDiv_3, child_div_3, 25);
+
+  var tog = document.querySelector('.div');
+  var datalove = document.querySelector('.ion')
+  tog.addEventListener('click', function(){
+    if(datalove.classList.contains('active')){
+      datalove.classList.remove('active')
+    }
+    else{datalove.classList.add('active')}
+  })
+
+  function color(icon){
+    icon.addEventListener('click', function(){
+      if(icon.style.backgroundImage = 'none'){
+        icon.style.backgroundImage = 'white'
+      }
+      else{icon.style.backgroundImage = 'none'}
+    })
+  }
+  color(ion_icon)
+  </script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

@@ -1,0 +1,591 @@
+@font-face {
+    font-family: Poppins;
+    src: url(../font/poppins/Poppins-Regular.ttf) format(truetype);
+}
+*{
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+    box-sizing: content-box;
+    list-style: none;
+    transition: 1 cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+h1{
+    color: whitesmoke;
+}
+p{
+    color: aliceblue;
+}
+body{
+    overflow: hidden;
+    background-color: #1C1F33 ;
+}
+nav, header{
+    backdrop-filter: blur(10px);
+}
+header{
+    position: absolute;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 95%;
+    height: 10vh;
+    transition: 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+header img{
+    width: 20%;
+}
+header .search{
+    background-color: #F3F3F4;
+    border-radius: 50px;
+    width: 30%;
+    height: 6vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+header .search form{
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    width: 85%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+header .search form input{
+    position: absolute;
+    width: 100%;
+}
+header .search form *{
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+header .search form ion-icon{
+    transform: scale(2);
+    margin-right: 10px;
+    position: relative;
+    margin-top: 5px;
+}
+.userData{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+.userData *{
+    transform: scale(1.5);
+}
+nav{
+    height: 100vh;
+    width: calc(100% - 95%);
+    position: absolute;
+    transition: 0.5s  cubic-bezier(0.165, 0.84, 0.44, 1);
+    overflow: hidden;
+}
+nav ion-icon{
+    transform: scale(1.8);
+    margin-left: 20px;
+}
+.menu{
+    height: 80%;
+    top: 7%;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+nav .menu div div{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+    position: relative;
+    left: 0;
+    margin-top: 30px;
+}
+nav .menu div div{
+    width: 100%;
+}
+nav .menu div div p{
+    position: relative;
+    width: 100%;
+    text-indent: 12px;
+}
+ion-icon{
+    filter: invert(1);
+}
+ion-icon:hover, nav .menu div div:hover{
+    cursor: pointer;
+}
+#head.active{
+    width: 85%;
+}
+#menu.active{
+    width: calc(100% - 85%);
+}
+.screenHome .boxScroll, .screenSearch, .like, .commentary{
+    position: absolute;
+    width: 85vw;
+    right: 0;
+    bottom: 0;
+    transition: 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border-top-left-radius: 10px;
+    background-color: #907AD6;
+    overflow-x: hidden;
+}
+.screenHome.active, .commentary.active, .boxScroll.active, .screenSearch.active, .like.active{
+    width: 96%;
+}
+.screenHome .boxScroll, .screenSearch, .like{
+    overflow-y: hidden;
+    height: 91vh;
+    overflow-y: auto;
+}
+.commentary{
+    height: 91vh;
+    width: 0vw;
+}
+.screenHome{
+    display: block;
+}
+.like{
+    display: none;
+}
+.sugg{
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.sugg .localization{
+    width: 50%;
+    height: 95%;
+    border-radius: 10px;
+    margin-top: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+    background-color: #4d60d1;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+.sugg .suggItems{
+    height: 95%;
+    width: 90%;
+    border-radius: 10px;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top: 15px;
+    margin-left: 15px;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-image: url(../img/licteur_news/no_image.jpg);
+}
+.homeItems{
+    background-color: #1c1f338f;
+    width: 100%;
+    height: 8%;
+    border-top-left-radius: 10px;
+    position: sticky;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.suggTopic{
+    width: 30%;
+}
+.suggTopic ul{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-around;
+}
+.suggTopic ul li{
+    transition: 0.5s ease-in-out;
+}
+.suggTopic ul li:hover{
+    border-bottom: 2px solid #81817c;
+}
+.suggTopic ul li a{
+    color: white;
+    text-decoration: none;
+}
+.suggItems .dataNotice{
+    height: 50%;
+    width: 100%;
+    display: flex;
+    align-items: start;
+    justify-content: flex-start;
+    gap: 50px;
+    flex-direction: row;
+    background-color: #1c1f3300;
+    border-top: 10px;
+    display: block;
+}
+div.data{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+h1.tiTle{
+    position: relative;
+    top: -50px;
+}
+.dataNotice .div *{
+    position: relative;
+    margin-top: 13px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+div.div ion-icon.icon{transition: 0.4s linear;
+    border-radius: 50%;
+    transform: scale(2);
+}   
+div.div ion-icon.icon:hover{
+    transform: scale(2.5);
+    background-color: #1c1f3363;
+    border-radius: 50%;
+}
+.dataNotice:hover{
+    cursor: default;
+}
+.suggItems:hover, #sugg_P2 .suggItems_P2:hover{
+    cursor: pointer;
+    transform: scale(1.020);
+}
+.suggItems .data{
+    background-color: #1d1d1dc7;
+    height: 50%;
+    width: 100%;
+    border-radius: 10px;
+    display: flex;
+    align-items: left;
+    justify-content: end;
+    flex-direction: column;
+    box-sizing: content-box;
+    overflow: hidden;
+    gap: 20px;
+}
+.data h1{
+    font-size: large;
+    width: 50%;
+    padding-left: 20px;
+    text-indent: 10px;
+}
+#sugg_P2{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    gap: 15px;
+    align-items: start;
+    justify-content: space-evenly;
+    height: 500px;
+}
+#sugg_P2 .suggItems_P2{
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 200px;
+    position: relative;
+    border-radius: 10px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 20px;
+    transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    background-image: url(../img/licteur_news/no_image.jpg);
+}
+.data_P2{
+    background-color: #1f1f1fb7;
+    width: 100%;
+    height: 50%;
+    border-radius: 10px;
+}
+.data_P2 h1{
+    font-size: large;
+}
+.none{
+    height: 50%;
+    width: 100%;
+}
+#sugg_P2 {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-column-gap: 15px;
+    grid-row-gap: 15px; 
+    margin-left: 4px;
+    padding-right: 9px;
+    }
+.suggItems_P2:nth-child(1){ grid-area: 2 / 1 / 3 / 3; }
+.suggItems_P2:nth-child(2) { grid-area: 2 / 3 / 3 / 5; }
+.suggItems_P2:nth-child(3) { grid-area: 2 / 5 / 3 / 7; } 
+.suggItems_P2:nth-child(4) { grid-area: 3 / 1 / 4 / 3; } 
+.suggItems_P2:nth-child(5) { grid-area: 3 / 3 / 4 / 4;} 
+.suggItems_P2:nth-child(6) { grid-area: 3 / 4 / 4 / 5;} 
+.suggItems_P2:nth-child(7) { grid-area: 3 / 5 / 4 / 7; } 
+.suggItems_P2:nth-child(8) { grid-area: 4 / 1 / 5 / 3; } 
+.suggItems_P2:nth-child(9) { grid-area: 4 / 3 / 5 / 5; } 
+.suggItems_P2:nth-child(10) { grid-area: 4 / 5 / 5 / 7; } 
+.suggItems_P2:nth-child(6) .data_P2 h1, .suggItems_P2:nth-child(5) .data_P2 h1{font-size: small;}
+.localization{
+    position: relative;
+}
+.localization::before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: #1C1F33;
+    position: absolute;
+    background-color: rgba(1, 70, 136, 0.295);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+}
+.data1 img{
+    animation: iconAnimation 10s infinite;
+}
+@keyframes iconAnimation {
+    50%{
+        transform: scale(1.25);
+    }
+}
+.screenHome .screenSearch .boxSearch{
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+border-radius: 10px;
+width: 90%;
+height: 2000vh;
+position: relative;
+left: 60px;
+}
+.news{
+    width: 90%;
+    padding: 10px;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    overflow-y: scroll;
+    gap: 30px;
+}
+.news .suggItems{
+    height: 60%;
+    width: 80%;
+    border-radius: 10px;
+    display: flex;
+    align-items: end;
+    justify-content: flex-end;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex-direction: column;
+}
+.news .suggItems .data{
+    background-color: #1c1f3394;
+    justify-content: space-between;
+}
+.news .suggItems .data *{
+    display: flex;
+    margin-top: 10px; margin-bottom: 10px; margin-left: 10;
+}
+div.data_P2{
+    background-color: #22253dc9;
+    display: flex;
+    align-items: start;
+    justify-content: space-around;
+    flex-direction: column;
+}
+.dataFinance{
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.boxF{
+    border-radius: 10px;
+    width: 90%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    background-image: url(../img/licteur_news/Robot.gif);
+}
+.dataF{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    background-color: #26293bec;
+    border-radius: 10px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 0.4s ease;
+}
+.dataF:hover{
+    cursor: pointer;
+    transform: scale(1.01);
+}
+.boxF *{
+    transition: 0.4s ease;
+}
+.dataF h1{
+    font-size: x-large;
+    text-align: left;
+    padding: 10px;
+    text-indent: 20px;
+}
+.dataF div{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 60%;
+    background-color: #2b2541b4;
+    border-radius: 10px;
+}
+.dataF div *{
+    margin: 25px;
+}
+.dataNone:hover{
+    cursor: pointer;
+}
+.commentary{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(230, 230, 250, 0.582);
+    backdrop-filter: blur(5px);
+}
+.news{
+    overflow-y: hidden;
+}
+.commentary div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+.commentary div form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    height: 100%;
+}
+.commentary div form input{
+    width: 50%;
+    height: 25%;
+    border-radius: 10px;
+    box-sizing: content-box;
+    overflow-wrap: break-word;
+    outline: none;
+    border: 1px #4d60d1 solid;
+}
+.commentary div form button{
+    width: 10%;
+    height: 5%;
+}
+.comentary.display{
+    display: none;
+}
+.commentary div form button{
+    background-color: #1C1F33;
+    color: white;
+    outline: none;
+    border-radius: 5px;
+    border: 1px transparent solid;
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.commentary div form button:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+}
+.settings{
+    transition: 0.4s ease;
+    display: block;
+    z-index: -2000;
+    position: relative;
+    transform: translateX(35vw);
+    top: 30vh;  
+    background-color: #23263f;
+    height: 40vh;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10%;
+    justify-content: center;
+    border-radius: 10px;
+    color: white;
+}
+.settings div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.settings div div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 80%;
+}
+.settings div div h1{
+    font-size: small;
+}
+.settings.active{
+    z-index: 2000;
+}
+.settButton{
+    transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+    background-color: rgba(227, 215, 238, 0.829);
+}
+.settButton:hover{
+    background-color: #ffffff;
+}
+.top_menu div, .bottom_menu div{
+    transition: 0.1s ease-in;
+}
+.top_menu div:hover, .bottom_menu div:hover{
+    border-bottom: 2px solid #4d60d1;
+}
+.mark{
+    border-left: 3px solid #907AD6;
+}
