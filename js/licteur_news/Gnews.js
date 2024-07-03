@@ -2,7 +2,7 @@ const apikey = '022efe0c66c24920b31ef4eede33738a';
  lang = 'en'
  var searchTheme = 'war';
 var url = 'https://newsapi.org/v2/top-headlines?' +
-'country=jp&' +
+'country=us&' +
 'apiKey=' + apikey;
 
 fetch(url)

@@ -1,7 +1,7 @@
 const apiKey = '022efe0c66c24920b31ef4eede33738a';
 
 var url = 'https://newsapi.org/v2/top-headlines?' +
-          'country=jp&' +
+          'country=us&' +
           'apiKey=' + apiKey;
 
           fetch(url)
